@@ -89,6 +89,13 @@ enum AuthEnvironment {
         )
     }
 
+    /// Pricing page used by every "Upgrade to cmux Pro" entrypoint
+    /// (Settings, command palette, Help menu). Follows websiteOrigin
+    /// so dev builds can point at a local web server via CMUX_WWW_ORIGIN.
+    static var pricingURL: URL {
+        websiteOrigin.appendingPathComponent("pricing")
+    }
+
     static var signInWebsiteOrigin: URL {
         canonicalizedLoopbackURL(
             resolvedURL(
