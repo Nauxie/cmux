@@ -49,7 +49,6 @@
     "taglinePrefix": "ទែមីណលដែលបង្កើតសម្រាប់ ",
     "typingCodingAgents": "ភ្នាក់ងារសរសេរកូដ",
     "typingMultitasking": "ពហុកិច្ចការ",
-    "subtitle": "កម្មវិធី macOS ដើមប្រភពកូដបើកចំហ និងឥតគិតថ្លៃ បង្កើតលើ Ghostty។ ផ្ទាំងបញ្ឈរ, រង្វង់ជូនដំណឹងពេល agent ត្រូវការការយកចិត្តទុកដាក់, បន្ទះបំបែក, និង <cliLink>CLI</cliLink> សម្រាប់ការសរសេរកម្មវិធី។",
     "features": "មុខងារ",
     "faq": "សំណួរញឹកញាប់",
     "communitySection": "សហគមន៍",
@@ -1515,7 +1514,6 @@
   },
   "nightly": {
     "title": "cmux NIGHTLY",
-    "subtitle": "កំណែចុងក្រោយពីសាខា main",
     "metaTitle": "cmux NIGHTLY — កំណែ Nightly",
     "metaDescription": "ទាញយក cmux NIGHTLY កម្មវិធីដាច់ដោយឡែកដែលត្រូវបានបង្កើតដោយស្វ័យប្រវត្តិពី commit ចុងក្រោយនៅលើ main។ ដំណើរការស្របជាមួយកំណែស្ថិរភាពជាមួយការអាប់ដេតស្វ័យប្រវត្តិផ្ទាល់ខ្លួន។",
     "description": "cmux NIGHTLY ត្រូវបានបង្កើតដោយស្វ័យប្រវត្តិពី commit ចុងក្រោយនៅលើ main។ វាមាន bundle ID ផ្ទាល់ខ្លួន ដូច្នេះវាដំណើរការស្របជាមួយកំណែស្ថិរភាពដោយគ្មានជម្លោះ។ ប្រើវាដើម្បីសាកល្បងមុខងារថ្មីមុនពេលចេញផ្សាយ។",
@@ -1595,6 +1593,20 @@
     "title": "បានចូល cmux ហើយ",
     "body": "ប្រសិនបើ cmux មិនបានបើកដោយស្វ័យប្រវត្តិ សូមប្រើប៊ូតុងខាងក្រោម។",
     "button": "ត្រឡប់ទៅ cmux"
+  },
+  "signInChooser": {
+    "title": "ជ្រើសរើសគណនី",
+    "continuePrefix": "ដើម្បីបន្តទៅ",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "ចូលដោយប្រើ Google",
+    "useAnotherAccount": "ប្រើគណនីផ្សេង",
+    "noRecentAccounts": "មិនទាន់មានគណនីដែលបានចងចាំទេ។",
+    "loading": "កំពុងបើក Google...",
+    "signInFailed": "ការចូលគណនីបានបរាជ័យ។ សូមព្យាយាមម្តងទៀត។",
+    "privacyPrefix": "មុនពេលប្រើកម្មវិធីនេះ អ្នកអាចពិនិត្យមើល",
+    "privacyPolicy": "គោលការណ៍ឯកជនភាព",
+    "privacyMiddle": "និង",
+    "termsOfService": "លក្ខខណ្ឌសេវាកម្មរបស់ cmux"
   },
   "landing": {
     "bestTerminal": {

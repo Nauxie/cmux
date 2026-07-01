@@ -49,7 +49,6 @@
     "taglinePrefix": "الطرفية المصممة لـ",
     "typingCodingAgents": "وكلاء البرمجة",
     "typingMultitasking": "تعدد المهام",
-    "subtitle": "محطة طرفية أصلية لنظام macOS مجانية ومفتوحة المصدر مبنية على Ghostty. علامات تبويب عمودية، وحلقات إشعارات عندما يحتاج الوكلاء إلى الانتباه، وأجزاء مقسمة، و<cliLink>واجهة CLI</cliLink> للبرمجة.",
     "features": "الميزات",
     "faq": "الأسئلة الشائعة",
     "communitySection": "المجتمع",
@@ -1519,7 +1518,6 @@
   },
   "nightly": {
     "title": "cmux NIGHTLY",
-    "subtitle": "أحدث الإصدارات من الفرع الرئيسي",
     "metaTitle": "cmux NIGHTLY — إصدارات ليلية",
     "metaDescription": "حمّل cmux NIGHTLY، تطبيق مستقل يُبنى تلقائياً من أحدث commit على main. يعمل بجانب النسخة المستقرة مع تحديثات تلقائية خاصة به.",
     "description": "يُبنى cmux NIGHTLY تلقائياً من أحدث commit على main. يمتلك معرّف حزمة خاص به، لذا يعمل بجانب النسخة المستقرة دون تعارض. استخدمه لاختبار الميزات الجديدة قبل إصدارها.",
@@ -1595,6 +1593,20 @@
     "title": "تم تسجيل الدخول إلى cmux",
     "body": "إذا لم يفتح cmux تلقائيًا، استخدم الزر أدناه.",
     "button": "العودة إلى cmux"
+  },
+  "signInChooser": {
+    "title": "اختر حسابًا",
+    "continuePrefix": "للمتابعة إلى",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "تسجيل الدخول باستخدام Google",
+    "useAnotherAccount": "استخدام حساب آخر",
+    "noRecentAccounts": "لا توجد حسابات محفوظة بعد.",
+    "loading": "جارٍ فتح Google...",
+    "signInFailed": "فشل تسجيل الدخول. حاول مرة أخرى.",
+    "privacyPrefix": "قبل استخدام هذا التطبيق، يمكنك مراجعة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "privacyMiddle": "و",
+    "termsOfService": "شروط الخدمة الخاصة بـ cmux"
   },
   "landing": {
     "bestTerminal": {
