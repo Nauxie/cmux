@@ -1596,6 +1596,20 @@
     "body": "如果 cmux 没有自动打开，请使用下面的按钮。",
     "button": "返回 cmux"
   },
+  "signInChooser": {
+    "title": "选择帐号",
+    "subtitle": "请登录以继续。",
+    "continuePrefix": "继续使用",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "使用 Google 登录",
+    "useAnotherAccount": "使用其他帐号",
+    "noRecentAccounts": "还没有记住的帐号。",
+    "loading": "正在打开 Google...",
+    "privacyPrefix": "使用此应用前，你可以查看 cmux 的",
+    "privacyPolicy": "隐私政策",
+    "privacyMiddle": "和",
+    "termsOfService": "服务条款"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "2026 年最适合 Mac 的终端 — cmux",

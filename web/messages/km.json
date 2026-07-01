@@ -1596,6 +1596,20 @@
     "body": "ប្រសិនបើ cmux មិនបានបើកដោយស្វ័យប្រវត្តិ សូមប្រើប៊ូតុងខាងក្រោម។",
     "button": "ត្រឡប់ទៅ cmux"
   },
+  "signInChooser": {
+    "title": "ជ្រើសរើសគណនី",
+    "subtitle": "ចូលដើម្បីបន្ត។",
+    "continuePrefix": "ដើម្បីបន្តទៅ",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "ចូលដោយប្រើ Google",
+    "useAnotherAccount": "ប្រើគណនីផ្សេង",
+    "noRecentAccounts": "មិនទាន់មានគណនីដែលបានចងចាំទេ។",
+    "loading": "កំពុងបើក Google...",
+    "privacyPrefix": "មុនពេលប្រើកម្មវិធីនេះ អ្នកអាចពិនិត្យមើល",
+    "privacyPolicy": "គោលការណ៍ឯកជនភាព",
+    "privacyMiddle": "និង",
+    "termsOfService": "លក្ខខណ្ឌសេវាកម្មរបស់ cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "ស្ថានីយល្អបំផុតសម្រាប់ Mac ក្នុងឆ្នាំ 2026 — cmux",

@@ -1949,6 +1949,20 @@
     "body": "cmux が自動的に開かない場合は、下のボタンを使用してください。",
     "button": "cmux に戻る"
   },
+  "signInChooser": {
+    "title": "アカウントを選択",
+    "subtitle": "続行するにはサインインしてください。",
+    "continuePrefix": "続行先:",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Google でサインイン",
+    "useAnotherAccount": "別のアカウントを使用",
+    "noRecentAccounts": "記憶されたアカウントはまだありません。",
+    "loading": "Google を開いています...",
+    "privacyPrefix": "このアプリを使用する前に、cmux の",
+    "privacyPolicy": "プライバシーポリシー",
+    "privacyMiddle": "と",
+    "termsOfService": "利用規約を確認できます"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "2026年、Mac に最適なターミナル — cmux",

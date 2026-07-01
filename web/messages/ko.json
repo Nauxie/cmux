@@ -1596,6 +1596,20 @@
     "body": "cmux가 자동으로 열리지 않으면 아래 버튼을 사용하세요.",
     "button": "cmux로 돌아가기"
   },
+  "signInChooser": {
+    "title": "계정 선택",
+    "subtitle": "계속하려면 로그인하세요.",
+    "continuePrefix": "계속 사용할 앱:",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Google로 로그인",
+    "useAnotherAccount": "다른 계정 사용",
+    "noRecentAccounts": "기억된 계정이 아직 없습니다.",
+    "loading": "Google을 여는 중...",
+    "privacyPrefix": "이 앱을 사용하기 전에 cmux의",
+    "privacyPolicy": "개인정보처리방침",
+    "privacyMiddle": "및",
+    "termsOfService": "서비스 약관을 확인할 수 있습니다"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "2026년 Mac을 위한 최고의 터미널 — cmux",

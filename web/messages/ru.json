@@ -1596,6 +1596,20 @@
     "body": "Если cmux не открылся автоматически, используйте кнопку ниже.",
     "button": "Вернуться в cmux"
   },
+  "signInChooser": {
+    "title": "Выберите аккаунт",
+    "subtitle": "Войдите, чтобы продолжить.",
+    "continuePrefix": "чтобы продолжить в",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Войти через Google",
+    "useAnotherAccount": "Использовать другой аккаунт",
+    "noRecentAccounts": "Сохраненных аккаунтов пока нет.",
+    "loading": "Открываем Google...",
+    "privacyPrefix": "Перед использованием приложения можно прочитать",
+    "privacyPolicy": "Политику конфиденциальности",
+    "privacyMiddle": "и",
+    "termsOfService": "Условия использования cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Лучший терминал для Mac в 2026 году — cmux",

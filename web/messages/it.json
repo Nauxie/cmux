@@ -1596,6 +1596,20 @@
     "body": "Se cmux non si è aperto automaticamente, usa il pulsante qui sotto.",
     "button": "Torna a cmux"
   },
+  "signInChooser": {
+    "title": "Scegli un account",
+    "subtitle": "Accedi per continuare.",
+    "continuePrefix": "per continuare con",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Accedi con Google",
+    "useAnotherAccount": "Usa un altro account",
+    "noRecentAccounts": "Nessun account ricordato.",
+    "loading": "Apertura di Google...",
+    "privacyPrefix": "Prima di usare questa app puoi leggere l'",
+    "privacyPolicy": "Informativa sulla privacy",
+    "privacyMiddle": "e i",
+    "termsOfService": "Termini di servizio di cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Il miglior terminale per Mac nel 2026 — cmux",

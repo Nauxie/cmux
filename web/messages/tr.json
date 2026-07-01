@@ -1596,6 +1596,20 @@
     "body": "cmux otomatik olarak açılmadıysa aşağıdaki düğmeyi kullanın.",
     "button": "cmux’a dön"
   },
+  "signInChooser": {
+    "title": "Bir hesap seç",
+    "subtitle": "Devam etmek için oturum aç.",
+    "continuePrefix": "devam etmek için",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Google ile oturum aç",
+    "useAnotherAccount": "Başka bir hesap kullan",
+    "noRecentAccounts": "Henüz hatırlanan hesap yok.",
+    "loading": "Google açılıyor...",
+    "privacyPrefix": "Bu uygulamayı kullanmadan önce cmux",
+    "privacyPolicy": "Gizlilik Politikası",
+    "privacyMiddle": "ve",
+    "termsOfService": "Hizmet Şartlarını inceleyebilirsiniz"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "2026'da Mac için en iyi terminal — cmux",

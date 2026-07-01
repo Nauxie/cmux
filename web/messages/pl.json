@@ -1596,6 +1596,20 @@
     "body": "Jeśli cmux nie otworzył się automatycznie, użyj przycisku poniżej.",
     "button": "Wróć do cmux"
   },
+  "signInChooser": {
+    "title": "Wybierz konto",
+    "subtitle": "Zaloguj się, aby kontynuować.",
+    "continuePrefix": "aby kontynuować w",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Zaloguj się przez Google",
+    "useAnotherAccount": "Użyj innego konta",
+    "noRecentAccounts": "Brak zapamiętanych kont.",
+    "loading": "Otwieranie Google...",
+    "privacyPrefix": "Przed użyciem tej aplikacji możesz przeczytać",
+    "privacyPolicy": "Politykę prywatności",
+    "privacyMiddle": "i",
+    "termsOfService": "Warunki korzystania z cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Najlepszy terminal dla Maca w 2026 — cmux",

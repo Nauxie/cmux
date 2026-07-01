@@ -1679,6 +1679,20 @@
     "body": "Якщо cmux не відкрився автоматично, скористайтеся кнопкою нижче.",
     "button": "Повернутися до cmux"
   },
+  "signInChooser": {
+    "title": "Виберіть обліковий запис",
+    "subtitle": "Увійдіть, щоб продовжити.",
+    "continuePrefix": "щоб продовжити в",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Увійти через Google",
+    "useAnotherAccount": "Використати інший обліковий запис",
+    "noRecentAccounts": "Запам'ятаних облікових записів ще немає.",
+    "loading": "Відкриваємо Google...",
+    "privacyPrefix": "Перед використанням цього застосунку ви можете переглянути",
+    "privacyPolicy": "Політику конфіденційності",
+    "privacyMiddle": "і",
+    "termsOfService": "Умови обслуговування cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Найкращий термінал для Mac у 2026 році — cmux",

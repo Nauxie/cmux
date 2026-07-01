@@ -1596,6 +1596,20 @@
     "body": "Ako se cmux nije automatski otvorio, koristite dugme ispod.",
     "button": "Vrati se u cmux"
   },
+  "signInChooser": {
+    "title": "Odaberite račun",
+    "subtitle": "Prijavite se za nastavak.",
+    "continuePrefix": "za nastavak u",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Prijavite se putem Googlea",
+    "useAnotherAccount": "Koristi drugi račun",
+    "noRecentAccounts": "Još nema zapamćenih računa.",
+    "loading": "Otvaranje Googlea...",
+    "privacyPrefix": "Prije korištenja ove aplikacije možete pregledati cmux",
+    "privacyPolicy": "Pravila privatnosti",
+    "privacyMiddle": "i",
+    "termsOfService": "Uslove korištenja"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Najbolji terminal za Mac u 2026. — cmux",

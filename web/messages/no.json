@@ -1596,6 +1596,20 @@
     "body": "Hvis cmux ikke åpnet automatisk, bruk knappen nedenfor.",
     "button": "Gå tilbake til cmux"
   },
+  "signInChooser": {
+    "title": "Velg en konto",
+    "subtitle": "Logg inn for å fortsette.",
+    "continuePrefix": "for å fortsette til",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "Logg inn med Google",
+    "useAnotherAccount": "Bruk en annen konto",
+    "noRecentAccounts": "Ingen huskede kontoer ennå.",
+    "loading": "Åpner Google...",
+    "privacyPrefix": "Før du bruker denne appen, kan du lese cmux",
+    "privacyPolicy": "Personvernerklæring",
+    "privacyMiddle": "og",
+    "termsOfService": "Vilkår for bruk"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "Den beste terminalen for Mac i 2026 — cmux",

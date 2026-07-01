@@ -1596,6 +1596,20 @@
     "body": "إذا لم يفتح cmux تلقائيًا، استخدم الزر أدناه.",
     "button": "العودة إلى cmux"
   },
+  "signInChooser": {
+    "title": "اختر حسابًا",
+    "subtitle": "سجّل الدخول للمتابعة.",
+    "continuePrefix": "للمتابعة إلى",
+    "continueProduct": "cmux",
+    "continueWithGoogle": "تسجيل الدخول باستخدام Google",
+    "useAnotherAccount": "استخدام حساب آخر",
+    "noRecentAccounts": "لا توجد حسابات محفوظة بعد.",
+    "loading": "جارٍ فتح Google...",
+    "privacyPrefix": "قبل استخدام هذا التطبيق، يمكنك مراجعة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "privacyMiddle": "و",
+    "termsOfService": "شروط الخدمة الخاصة بـ cmux"
+  },
   "landing": {
     "bestTerminal": {
       "metaTitle": "أفضل محطة طرفية لنظام Mac في 2026 — cmux",
