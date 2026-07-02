@@ -43,10 +43,68 @@ extension CMUXCLI {
             "fork_unavailable_reason": unavailableReason,
             "fork_startup_input_available": forkStartupInputAvailable,
             "hook_record_restorable": hookRecordRestorable,
-            "stale_pid_blocks_restore_in_0_64_17": hookRecordRestorable && record.pid != nil,
+            "stale_pid_blocks_restore_in_0_64_17": sessionsListStalePIDBlocksRestoreIn06417(
+                agent: agent,
+                record: record,
+                hookRecordRestorable: hookRecordRestorable
+            ),
         ]
         diagnostics["stored_pid_exists"] = storedPIDExists ?? NSNull()
         return diagnostics
+    }
+
+    private func sessionsListStalePIDBlocksRestoreIn06417(
+        agent: String,
+        record: ClaudeHookSessionRecord,
+        hookRecordRestorable: Bool
+    ) -> Bool {
+        guard hookRecordRestorable, let pid = record.pid else { return false }
+        return !sessionsListStoredPIDStillMatchesLaunch(agent: agent, record: record, pid: pid)
+    }
+
+    private func sessionsListStoredPIDStillMatchesLaunch(
+        agent: String,
+        record: ClaudeHookSessionRecord,
+        pid: Int
+    ) -> Bool {
+        guard let process = sessionsListProcessIdentity(for: pid),
+              sessionsListProcessStartTimeMatchesRecord(process.startTime, record: record) else {
+            return false
+        }
+        let literalCaseInsensitive: String.CompareOptions = [.caseInsensitive, .literal]
+        guard let recordedExecutable = sessionsListRecordedExecutableBasename(record),
+              let liveExecutable = sessionsListProcessExecutableBasename(process) else {
+            return true
+        }
+        if liveExecutable.compare(recordedExecutable, options: literalCaseInsensitive) == .orderedSame {
+            return true
+        }
+        guard agent == "claude" else { return false }
+        let liveBase = liveExecutable.lowercased()
+        guard liveBase == "node" || liveBase == "bun" else { return false }
+        return process.arguments.dropFirst().contains { argument in
+            let lowered = argument.lowercased()
+            return sessionsListExecutableBasename(argument).compare("claude", options: literalCaseInsensitive) == .orderedSame
+                || lowered.contains("/.claude/")
+                || lowered.contains("/claude/versions/")
+        }
+    }
+
+    private func sessionsListProcessExecutableBasename(_ process: SessionsListProcessIdentity) -> String? {
+        if let executablePath = sessionsListNormalized(process.executablePath) {
+            return sessionsListExecutableBasename(executablePath)
+        }
+        return process.arguments.first.map(sessionsListExecutableBasename)
+    }
+
+    private func sessionsListRecordedExecutableBasename(_ record: ClaudeHookSessionRecord) -> String? {
+        let executable = sessionsListNormalized(record.launchCommand?.executablePath)
+            ?? record.launchCommand?.arguments.first.flatMap(sessionsListNormalized)
+        return executable.map(sessionsListExecutableBasename)
+    }
+
+    private func sessionsListExecutableBasename(_ value: String) -> String {
+        (value as NSString).lastPathComponent
     }
 
     private func sessionsListHookRecordRestorable(

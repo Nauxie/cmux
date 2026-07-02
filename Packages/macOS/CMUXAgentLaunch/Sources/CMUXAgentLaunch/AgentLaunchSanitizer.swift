@@ -77,11 +77,21 @@ public enum AgentLaunchSanitizer {
     }
 
     public static func preservedArguments(kind: String, args: [String]) -> [String]? {
+        func preserveCodexFork(_ preservePromptTags: Bool) -> [String]? {
+            var tail = args; var preservePositionals = false
+            if let forkCommand = codexForkCommand(in: tail) {
+                tail = dropCodexForkPositionals(tail, forkCommand: forkCommand, preservePromptTags: preservePromptTags); preservePositionals = preservePromptTags
+            }
+            var policy = codexPolicy; policy.preservePositionals = preservePositionals
+            return preserveOptions(tail, policy: policy)
+        }
         switch kind {
         case "claude":
             return preserveOptions(args, policy: claudePolicy)
         case "codex":
             return preserveOptions(args, policy: codexPolicy)
+        case "codex-fork-replay": return preserveCodexFork(true)
+        case "codex-fork-restore": return preserveCodexFork(false)
         case "grok":
             return preserveOptions(args, policy: grokPolicy)
         case "pi", "omp":
@@ -202,15 +212,6 @@ public enum AgentLaunchSanitizer {
         }
         return false
     }
-    public static func preservedCodexForkArguments(args: [String], preservePromptTags: Bool = false) -> [String]? {
-        var tail = args
-        if let forkCommand = codexForkCommand(in: tail) {
-            tail = dropCodexForkPositionals(tail, forkCommand: forkCommand)
-        }
-        var policy = codexPolicy; policy.preservePositionals = preservePromptTags
-        return preserveOptions(tail, policy: policy)
-    }
-
     public static func removingSavedWorkingDirectoryOptions(
         from args: [String],
         workingDirectory: String?
@@ -250,7 +251,7 @@ public enum AgentLaunchSanitizer {
 
     private static func preservedCodexLaunchArguments(args: [String]) -> [String]? {
         if codexForkCommand(in: args) != nil {
-            return preservedCodexForkArguments(args: args)
+            return preservedArguments(kind: "codex-fork-restore", args: args)
         }
         return preservedArguments(kind: "codex", args: args)
     }
@@ -393,7 +394,7 @@ public enum AgentLaunchSanitizer {
         return result
     }
 
-    private static func dropCodexForkPositionals(_ args: [String], forkCommand: CodexForkCommand) -> [String] {
+    private static func dropCodexForkPositionals(_ args: [String], forkCommand: CodexForkCommand, preservePromptTags: Bool) -> [String] {
         var result: [String] = []
         var index = 0
         var skippedSession = false
@@ -409,7 +410,7 @@ public enum AgentLaunchSanitizer {
             }
             if index == forkCommand.sessionIndex { skippedSession = true; index += 1; continue }
             if !arg.hasPrefix("-") || arg == "-" {
-                if skippedSession { result.append(arg) }
+                if skippedSession && preservePromptTags { result.append(arg) }
                 index += 1
                 continue
             }
