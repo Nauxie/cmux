@@ -118,6 +118,84 @@ struct WorkspaceSidebarObservationTests {
         )
     }
 
+    @Test func sidebarImmediateObservationPublisherDeliversFirstChangeSynchronously() {
+        let workspace = Workspace()
+
+        var publishCount = 0
+        let cancellable = workspace.sidebarImmediateObservationPublisher.sink {
+            publishCount += 1
+        }
+        defer { cancellable.cancel() }
+        publishCount = 0
+
+        workspace.title = "User Edit"
+
+        #expect(
+            publishCount == 1,
+            "The first immediate-field change after subscribing must reach the sidebar in the same run-loop turn; coalescing may only defer the tail of a burst."
+        )
+    }
+
+    @Test func sidebarImmediateObservationPublisherCoalescesTitleBursts() {
+        let workspace = Workspace()
+
+        var publishCount = 0
+        let cancellable = workspace.sidebarImmediateObservationPublisher.sink {
+            publishCount += 1
+        }
+        defer { cancellable.cancel() }
+        publishCount = 0
+
+        for turn in 0..<20 {
+            workspace.title = "Agent Turn \(turn)"
+        }
+
+        #expect(
+            publishCount == 1,
+            "A synchronous burst of distinct titles must deliver only its leading edge immediately."
+        )
+
+        // Generous pump so the 50ms trailing emission fires deterministically.
+        RunLoop.main.run(until: Date().addingTimeInterval(0.3))
+
+        #expect(
+            publishCount == 2,
+            "A coalesced burst must settle with exactly one trailing emission carrying the latest state."
+        )
+    }
+
+    @Test func coalesceLatestKeepsLeadingEdgeSynchronousAndEmitsLatestTrailing() {
+        let subject = PassthroughSubject<Int, Never>()
+        var received: [Int] = []
+        let cancellable = subject
+            .coalesceLatest(for: .milliseconds(50), scheduler: RunLoop.main)
+            .sink { received.append($0) }
+        defer { cancellable.cancel() }
+
+        // First value models the @Published current-state replay: forwarded
+        // synchronously without opening a coalesce window.
+        subject.send(1)
+        #expect(received == [1])
+
+        // First change is the synchronous leading edge and opens the window.
+        subject.send(2)
+        #expect(received == [1, 2])
+
+        // Burst inside the window coalesces to the latest value.
+        subject.send(3)
+        subject.send(4)
+        subject.send(5)
+        #expect(received == [1, 2])
+
+        RunLoop.main.run(until: Date().addingTimeInterval(0.3))
+        #expect(received == [1, 2, 5])
+
+        // After the window closes and the trailing window expires, the next
+        // value is synchronous again.
+        subject.send(6)
+        #expect(received == [1, 2, 5, 6])
+    }
+
     @Test func sidebarObservationPublisherIgnoresRemoteHeartbeatOnlyChanges() {
         let workspace = Workspace()
 
